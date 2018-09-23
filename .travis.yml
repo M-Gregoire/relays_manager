@@ -1,0 +1,14 @@
+language: python
+python: 3.6
+install:
+- pip install coveralls nose
+- pip install .
+script:
+- nosetests --with-coverage --cover-package=relays_manager
+after_success:
+- coveralls
+deploy:
+  provider: pypi
+  user: M-Gregoire
+  password:
+    secure: bC4FJU8SHoKAB1aprDBX+kqcO06hu94aQbo+K4GO+eq8KJb8MgBgLBv579vtbyluAIt73gzbTnbYiysMuGUzBczU45ifIFAsZR2Ly92aZ9mh2Ir6oTTJOotaOO5JVOUYFkOWx3kVed5o2ZkgT7mi8UNoQam2335DWNKLUow2+Wkx5/vde09Mf6yp8GW0boGbJ/EHD4tomHKu+4SFoApVYVMYhO9YWtAUzvbaULDbZtGsI2dIWjH3FxMo3z75B98e0Sd6itd+3/O6IcAJsupE1z/z1MFefEmJHbdNyCuqwclJ+kQ1yrSu/0KZzz/uImCvVI22+5J69r9WIMAXZ6W/mSlxkZtrVVI5vYBxtGwRAP/ufMJHZm10OoggXl0EyGeCyYacPC+Fu8Mb0unF+/RHlI6N84vRej0eZ1/Vz4SIv5likiQqEzvxO4kS0FLEbCR6FpAmsURTxRBtqOzGrEDL8NNvxyq4Xpj1Vjv1kLndTRg/yFjN7JX2HZBps3T2lvt3rnZi5FdiJTwXYVjsbx/A6UII1GdFUz4lV9e0KNy3W+xt1c4wlTdfQFZphBfHOcuX1G4+lsg4oEGByKxF3zZmykIgrXXsOjVpm7bkzYiasLGFZF+s0UCrM2cmwZ37pyz4tEfKkCGymffsD4hXGtKK1Of7riCI17HJiD7YClfOPGA=
